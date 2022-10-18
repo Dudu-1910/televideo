@@ -1,0 +1,320 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&family=Cookie&display=swap');
+
+:root {
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --footer-color: #242529;
+  --botao-yellow: #facd3b;
+  --font-titulo: 'Cookie';
+  --font-principal: 'Comic Neue';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background: url("https://i.pinimg.com/originals/27/1d/6d/271d6df5399c65dd04c3683d5e12fa45.jpg"); */
+  background: url("https://img.freepik.com/fotos-gratis/abstrato-pedestal-futurista-para-apresentacao-do-produto_35913-2415.jpg");
+  background-color: var(--black-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--font-principal);
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* início barra de navegação */
+button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.navbar {
+  align-items: center;
+  background: var(--black-color);
+  box-sizing: border-box;
+  color: var(--white-color);
+  display: flex;
+  font-family: var(--font-principal);
+  height: 45px;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  opacity: 0;
+  transition: 0.3s;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+}
+
+body.open .navbar-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-burger {
+  display: grid;
+  height: 64px;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 13px;
+  width: 64px;
+}
+
+.navbar-title {
+  cursor: pointer;
+  font-family: var(--font-titulo);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.navbar-menu {
+  align-items: flex-start;
+  background: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  transition: translate 0.3s;
+  translate: -100%;
+  top: 0;
+  width: 200px;
+  visibility: hidden;
+  z-index: 3;
+}
+
+body.open .navbar-menu {
+  translate: 0 0;
+  visibility: visible;
+}
+
+.navbar-menu>button {
+  background: transparent;
+  color: var(--white-color);
+  padding: 0 8px;
+}
+
+.navbar-menu>button.active {
+  color: inherit;
+}
+/* fim barra de navegação */
+
+
+.container {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-principal);
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.container-video {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  margin-top: 120px;
+  padding-bottom: 100px;
+  text-align: center;
+  width: 100%;
+}
+
+/* início destaque página principal */
+.destaque {
+  background: rgba(173, 165, 165, 0.5);
+  border-radius: 5px;
+  display: block;
+  justify-content: center;
+  margin: 180px auto 0 auto;
+  max-width: 560px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.destaque-principal{
+  flex-direction: column;
+}
+
+.titulo-principal {
+  color: var(--white-color);
+  font-size: 100px;
+  font-family: var(--font-titulo);
+  margin-top: 75px;
+}
+
+.titulo-videos {
+  align-items: center;
+  background: rgba(253, 253, 253, 0.6);
+  color: var(--black-color);
+  font-size: 25px;
+  font-weight: 500;
+  padding: 16px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.subtitulo-destaque {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 16px;
+}
+
+.btn-criaSala {
+  background: var(--botao-yellow);
+  border-radius: 5px;
+  color: var(--black-color);
+  display: block;
+  padding: 16px;
+  margin: 16px auto;
+  text-decoration: none;
+}
+/* fim destaque página principal */
+
+/* início vídeos */
+.video-principal {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  height: 30vh;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.subtitulo-mais-videos {
+  color: var(--white-color);
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.videos {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.video-diversos {
+  height: 150px;
+  padding: 10px;
+  transition: all 0.5s;
+  width: 100px;
+}
+
+.video-diversos:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.5);
+  transform: scale(1.1);
+}
+/* fim vídeos */
+
+/* início footer */
+footer {
+  background: var(--footer-color);
+  margin-top: 70px;
+  min-height: 40px;
+  padding: 20px;
+  
+}
+
+.rodape {
+  align-items: center;
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+  justify-content: center;
+}
+/*  fim footer  */
+
+/* início responsivo */
+@media only screen and (min-width: 600px){
+  button.navbar-btn {
+    font-size: 12px;
+    padding-top: 15px;
+  }
+
+  .navbar-btn {
+    margin-left: 15px;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 0 0 0 16px;
+  }
+
+  .navbar-overlay {
+    display: none;
+  }
+
+  .navbar-burger {
+    display: none;
+  }
+
+  .navbar-menu {
+    align-items: center;
+    background: transparent;
+    flex-direction: row;
+    font-family: var(--font-principal);
+    font-size: 14px;
+    position: static;
+    translate: 0 0;
+    visibility: visible;
+    width: auto;
+  }
+
+  .video-principal {
+    height: 315px;
+    width: 600px;
+  }
+
+  .subtitulo-mais-videos {
+    margin-left: 75px;
+    text-align: left;
+  }
+
+  .video-diversos {
+    align-items: center;
+    height: 300px;
+    width: 250px;
+  }
+
+  .videos {
+    align-items: center;
+    display: block;
+    justify-content: center;
+    padding: 15px;
+  }
+}
+/* fim responsivo */
